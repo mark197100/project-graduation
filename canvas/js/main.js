@@ -13,16 +13,64 @@ function setCanvasSize() {/* 定义Canvas的宽高 */
     canvas.height = pageHeight
 }
     /* 通过点击控制 画画和橡皮擦功能 */
+red.onclick = function(){
+    context.strokeStyle='red'
+    red.classList.add('active')
+    yellow.classList.remove('active')
+    black.classList.remove('active')
+    
+}
+yellow.onclick = function(){
+    context.strokeStyle='yellow'
+    yellow.classList.add('active')
+    red.classList.remove('active')
+    black.classList.remove('active')
+}
+black.onclick = function(){
+    context.strokeStyle='black'
+    black.classList.add('active')
+    red.classList.remove('active')
+    yellow.classList.remove('active')
+}
+context.lineWidth=5
+
+thin.onclick = function(){
+    context.lineWidth = 5
+            
+}
+thick.onclick = function(){
+    context.lineWidth = 10
+}
 
 var eraserEnabled = false
-    eraser.onclick = function () {
+pen.onclick = function () {
+    eraserEnabled = false
+    actions.className = 'actions'
+    pen.classList.add('active')
+    eraser.classList.remove('active')
+    
+}    
+eraser.onclick = function () {
         eraserEnabled = true
-        actions.className = 'actions x'
+        /* actions.className = 'actions x' */
+        eraser.classList.add('active')
+        pen.classList.remove('active')
+        yellow.classList.remove('active')
+        red.classList.remove('active')
+        black.classList.remove('active')    
     }
-    brush.onclick = function () {
-        eraserEnabled = false
-        actions.className = 'actions'
-    }
+clear.onclick=function(){
+    context.clearRect(0,0,canvas.width,canvas.height)
+}
+save.onclick = function(){
+    var url =canvas.toDataURL('image/png')
+    var a =document.createElement('a')
+    document.body.appendChild(a)
+    a.href = url
+    a.download = '我的杰作'
+    a.target = '_blank'
+a.click()
+}
 
 /* 检测鼠标设备或者触屏设备 */
 if (document.body.ontouchstart !== undefined) {
@@ -35,8 +83,6 @@ if (document.body.ontouchstart !== undefined) {
             context.clearRect(x, y, 10, 10)
         } else {
             context.beginPath()
-            context.strokeStyle = 'red'
-            context.lineWidth = 10
             context.arc(x, y, 1, 0, 8, true)
             context.stroke()
             context.closePath()
@@ -72,8 +118,6 @@ if (document.body.ontouchstart !== undefined) {
             context.clearRect(x, y, 10, 10)
         } else {
             context.beginPath()
-            context.strokeStyle = 'red'
-            context.lineWidth = 10
             context.arc(x, y, 1, 0, 8, true)
             context.stroke()
             context.closePath()
