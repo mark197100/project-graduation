@@ -16,7 +16,9 @@ body{
 canvas{
     outline:1px solid red;
     display:block;
-    
+    position:fixed;//取消手机端浮动
+    top:0;
+    left:0;
 }
 .actions{
     position: fixed;
