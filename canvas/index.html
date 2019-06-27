@@ -1,39 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>画板</title>
+    <title>在线画板</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <canvas id='xxx' style='background: transparent;'></canvas>
-    <div id='actions' class="actions">
-        
-        <svg id='pen' class="icon active" aria-hidden="true">
-            <use xlink:href="#icon-pen"></use>
-        </svg>
-        <svg id='eraser' class="icon" aria-hidden="true">
-            <use xlink:href="#icon-eraser"></use>
-        </svg>
-        <svg id='clear' class="icon" aria-hidden="true">
-            <use xlink:href="#icon-custom-clear"></use>
-        </svg>
-        <svg id='save' class="icon" aria-hidden="true">
-            <use xlink:href="#icon-Save"></use>
-        </svg>
+    <div class='tool'>
+        <div id='actions' class="actions">
+
+            <svg id='pen' class="icon active" aria-hidden="true">
+                <use xlink:href="#icon-pen"></use>
+            </svg>
+            <svg id='eraser' class="icon" aria-hidden="true">
+                <use xlink:href="#icon-eraser"></use>
+            </svg>
+            <svg id='clear' class="icon" aria-hidden="true">
+                <use xlink:href="#icon-custom-clear"></use>
+            </svg>
+            <svg id='save' class="icon" aria-hidden="true">
+                <use xlink:href="#icon-Save"></use>
+            </svg>
+        </div>
+        <ol class='colors'>
+            <li id='black'  style='background:black;'></li>
+            <li id='red' style='background:red;'></li>
+            <li id='green' style='background:green;'></li>
+            <li id='blue' style='background:blue;'></li>
+            <li id='yellow' style='background:yellow;'></li>
+            <li id='cyan' style='background:cyan;'></li>
+            <li id='white' style='background:white;'></li>
+        </ol>
+        <ol class='sizes'>
+            <li id='thin'></li>
+            <li id='thick'></li>
+        </ol>
     </div>
-    <ol class='colors'>
-        <li id='red' style='background:red'></li>
-        <li id='yellow' style='background:yellow'></li>
-        <li id='black' class='active' style='background:black'></li>
-    </ol>
-    <ol class='sizes'>
-        <li id='thin'></li>
-        <li id='thick'></li>
-    </ol>
-   <script src='//at.alicdn.com/t/font_1261151_6qg1423c3ok.js'></script>
+
+    <script src='//at.alicdn.com/t/font_1261151_6qg1423c3ok.js'></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>

@@ -1,3 +1,5 @@
+
+
 var canvas = document.getElementById('xxx')
 var context = canvas.getContext('2d')
 
@@ -13,25 +15,35 @@ function setCanvasSize() {/* 定义Canvas的宽高 */
     canvas.height = pageHeight
 }
     /* 通过点击控制 画画和橡皮擦功能 */
-red.onclick = function(){
-    context.strokeStyle='red'
-    red.classList.add('active')
-    yellow.classList.remove('active')
-    black.classList.remove('active')
-    
-}
-yellow.onclick = function(){
-    context.strokeStyle='yellow'
-    yellow.classList.add('active')
-    red.classList.remove('active')
-    black.classList.remove('active')
-}
 black.onclick = function(){
     context.strokeStyle='black'
-    black.classList.add('active')
-    red.classList.remove('active')
-    yellow.classList.remove('active')
+    pen.style="color:black;transform:scale(1.5);"
 }
+red.onclick = function(){
+    context.strokeStyle='red'
+    pen.style="color:red;transform:scale(1.5);"
+}
+green.onclick = function(){
+    context.strokeStyle='green'
+    pen.style="color:green;transform:scale(1.5);"
+}
+blue.onclick =function(){
+    context.strokeStyle='blue'
+    pen.style="color:blue;transform:scale(1.5);"
+}
+yellow.onclick =function(){
+    context.strokeStyle='yellow'
+    pen.style="color:yellow;transform:scale(1.5);"
+}
+cyan.onclick =function(){
+    context.strokeStyle='cyan'
+    pen.style="color:cyan;transform:scale(1.5);"
+}
+white.onclick =function(){
+    context.strokeStyle='white'
+    pen.style="color:white;transform:scale(1.5);"
+}
+
 context.lineWidth=5
 
 thin.onclick = function(){
@@ -53,11 +65,9 @@ pen.onclick = function () {
 eraser.onclick = function () {
         eraserEnabled = true
         /* actions.className = 'actions x' */
-        eraser.classList.add('active')
-        pen.classList.remove('active')
-        yellow.classList.remove('active')
-        red.classList.remove('active')
-        black.classList.remove('active')    
+        // eraser.classList.add('active')
+        pen.style="color:black;transform:scale(1.0);"
+           
     }
 clear.onclick=function(){
     context.clearRect(0,0,canvas.width,canvas.height)
