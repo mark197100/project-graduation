@@ -6,7 +6,7 @@ var context = canvas.getContext('2d')
 /* 定义canvas的宽高 */
 setCanvasSize()
 window.onresize = function () {
-    setCanvasSize()
+    // setCanvasSize()
 }
 function setCanvasSize() {/* 定义Canvas的宽高 */
     var pageWidth = document.documentElement.clientWidth
@@ -18,26 +18,38 @@ function setCanvasSize() {/* 定义Canvas的宽高 */
 black.onclick = function(){
     context.strokeStyle='black'
     pen.style="color:black;transform:scale(1.5);"
+    eraserEnabled = false
+
 }
 red.onclick = function(){
     context.strokeStyle='red'
     pen.style="color:red;transform:scale(1.5);"
+    eraserEnabled = false
+
 }
 green.onclick = function(){
     context.strokeStyle='green'
     pen.style="color:green;transform:scale(1.5);"
+    eraserEnabled = false
+
 }
 blue.onclick =function(){
     context.strokeStyle='blue'
     pen.style="color:blue;transform:scale(1.5);"
+    eraserEnabled = false
+
 }
 yellow.onclick =function(){
     context.strokeStyle='yellow'
     pen.style="color:yellow;transform:scale(1.5);"
+    eraserEnabled = false
+
 }
 cyan.onclick =function(){
     context.strokeStyle='cyan'
     pen.style="color:cyan;transform:scale(1.5);"
+    eraserEnabled = false
+
 }
 white.onclick =function(){
     context.strokeStyle='white'
